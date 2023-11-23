@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct PreviewProvider: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension PreviewProvider {
+    static var dev: DeveloperPreview {
+        return DeveloperPreview.shared
     }
 }
 
-#Preview {
-    PreviewProvider()
+class DeveloperPreview {
+    static let shared = DeveloperPreview()
+    
+    let user = User(id: NSUUID().uuidString, fullname: "Tommy Shelby", email: "tommy@gmail.com", username: "tommy_shelby1"
+                    
+                    let thread = Thread(ownerUid: "123", caption: "This is a test thread", timestamp: Timestamp(), likes: 0)
 }

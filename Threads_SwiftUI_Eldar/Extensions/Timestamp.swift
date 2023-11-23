@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct Timestamp: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension Timestamp {
+    func timestampString() -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: self.dateValue(), to: Date()) ?? ""
     }
-}
-
-#Preview {
-    Timestamp()
 }
