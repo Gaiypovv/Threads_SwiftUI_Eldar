@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewModel()
+    
     var body: some View {
-        VStack {
-          Text("Hello Eldar")
-        }
-        .padding()
+     Group  
     }
 }
 
